@@ -1,14 +1,10 @@
 $(document).ready(function() {
-  var userScore = 0;
   var randomNumOne = Math.floor(Math.random() * 12) + 1;
   var randomNumTwo = Math.floor(Math.random() * 12) + 1;
   var randomNumThree = Math.floor(Math.random() * 12) + 1;
   var randomNumFour = Math.floor(Math.random() * 12) + 1;
-  var target = Math.floor(Math.random() * 101) + 19;
-  var wins = 0;
-  var losses = 0;
 
-  console.log(target);
+  //   console.log(target);
 
   $("#crystalOne").val(randomNumOne);
   $("#crystalTwo").val(randomNumTwo);
@@ -18,8 +14,12 @@ $(document).ready(function() {
   $(".crystal").on("click", function() {
     var number = $(this).val();
     var num = parseInt(number);
+    var wins = 0;
+    var losses = 0;
+    var target = Math.floor(Math.random() * 101) + 19;
+    var userScore = 0;
 
-    console.log(number);
+    // console.log(number);
 
     if (userScore === target) {
       alert("you win!");
@@ -29,9 +29,9 @@ $(document).ready(function() {
     if (userScore > target) {
       alert("You Lose!");
       losses++;
-      "#losses".html("Losses: " + losses);
+      $("#losses").html("Losses: " + losses);
     }
 
-    var html = "<p>wins: " + wins + "</p>" + "<p>losses: " + losses + "</p>";
+    // var html = "<p>wins: " + wins + "</p>" + "<p>losses: " + losses + "</p>";
   });
 });
