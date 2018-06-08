@@ -11,9 +11,9 @@ $(document).ready(function() {
   $("#losses").html("Losses: " + losses);
   $("#wins").html("Wins: " + wins);
   $("#targetScore").html("Target Score: " + target);
-  //   $("#userScore").html("user Score: " + target);
+  $("#userScore").html("user Score: " + userScore);
 
-  //   console.log(target);
+  console.log(userScore);
 
   $("#crystalOne").val(randomNumOne);
   $("#crystalTwo").val(randomNumTwo);
@@ -23,7 +23,9 @@ $(document).ready(function() {
   $(".crystal").on("click", function() {
     var number = $(this).val();
     var num = parseInt(number);
-    $("#userScore").html("User Score: " + userScore);
+
+    userScore += num;
+    // $("#userScore").html("User Score: " + userScore);
 
     if (userScore === target) {
       alert("you win!");
@@ -33,6 +35,6 @@ $(document).ready(function() {
       alert("You Lose!");
       losses++;
     }
-    document.getElementById("userScore").innerHTML = target;
+    document.getElementById("userScore").innerHTML = userScore;
   });
 });
